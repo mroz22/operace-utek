@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  if !authenticated
+    h1 Operace Útěk
+    p.lead Nevšední zážitková hra v přírodě
+    hr
+    .row
+        .col-md-12
+        h2 Intro
+        p Televizní stanice Vostok nedávno odvísílala reportáž plnou závažných zjištění. Podle reportáže byla na základně ChLRA (Chřibská lidově republikánská armáda) zaznamenána zvýšená aktivita personálu a techniky. Podle dobrého zdroje, jehož jméno redakce zná ale neuvádí, sledují počínání armádních špiček představitelé politického vedení Chřibské lidové republiky s krajní nelibostí. Mají totiž ještě stále na paměti neblahé důsledky agrese chřibských vojsk proti Valašským partyzánům. Okolní státy tehdy uvalili na nejvyšší chřibské politiky a oligarchy embargo, v důsledku čehož byl zaražen přísun luxusního zboží (elektronika apple, kvalitní whisky a tabák...).
+        p Zdá se, že jediným vhodným řešením je odstavit válečné štváče od moci. To je ale vždy ošemetná záležitost. Zkušení matadoři chřibské politiky a zákulisní hráči však už ví, že v takovém případě je třeba vytočit jedno velmi speciální telefonní číslo. Georg Choroš. Nejen významný filantrop, ale také majitel známé žoldácké agentury, která má na svém kontě mimojiné takové úspěchy, jako například státní převrat v Burkina Faso.
+        p Veškeré výše uvedené informace byly samozřejmě označeny jako "fake news". Faktem však zůstává, že žoldácká agentura Primus protectus vypsala výběrová řízení na mnoho zajímavých pozic.
+    .row
+      .col-md-3
+      .col-md-3
+        img.img.img-responsive(height="400px")(src="img/contractor1.png")
+      .col-md-3
+        img.img.img-responsive(height="400px")(src="img/contractor2.png")
+        .col-md-3
+    .row
+      .col-md-12
+        p Inzeráty jsou zajímavé především velmi dobrým finančním ohodnocením. Navíc pracovat jako žoldák zní jako velká zábava a mít něco takového v životopisu znamená raketový start profesní dráhy!
+        p
+          a.btn.btn-raised(href='/signup', role='button') Podívat se na detaily »
+  else
+    .row
+      .col-md-12
+        h1 Primus proctectus
+        p Vítejte ve svém osobním profilu
+        p Abychom Vám mohli nabídnout práci, která Vám bude nejlépe vyhovovat, vyplňte, prosím, osobní informace ve svém
+          a(href="/account") profilu
+

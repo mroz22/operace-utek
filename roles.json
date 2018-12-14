@@ -1,0 +1,73 @@
+[{
+  "role": "Voják základní služby ChLRA",
+  "task": {
+    "preGame": "",
+    "inGame": "Připravit dle rozpisu dne pokrmy pro mužstvo a velitelksý sbor"
+  },
+  "start": {
+    "place": "Vojenská základna staré Hutě",
+    "time": 0
+  },
+  "priceModifier": 1,
+  "difficulty": 5
+}, {
+  "role": "Důstojník ChLRA",
+  "task": {
+    "preGame": "",
+    "inGame": ""
+  },
+  "start": {
+    "place": "Vojenská základna staré Hutě",
+    "time": 0
+  },
+  "priceModifier": 1,
+  "difficulty": 5
+}, {
+  "role": "Velitel základny ChLRA",
+  "task": {
+    "preGame": "Veškeré organizační záležitosti stran Cholery a základny na Hutích",
+    "inGame": ""
+  },
+  "start": {
+    "place": "Vojenská základna staré Hutě",
+    "time": 0
+  },
+  "priceModifier": 0,
+  "difficulty": 5
+}, {
+  "role": "Pilot letectva ChLRA",
+  "task": {
+    "preGame": "",
+    "inGame": "Připravit dle rozpisu dne pokrmy pro mužstvo a velitelksý sbor"
+  },
+  "start": {
+    "place": "Skautská základna v UH",
+    "time": -2
+  },
+  "priceModifier": 1,
+  "difficulty": 7
+}, {
+  "role": "Kuchař ChLRA",
+  "task": {
+    "preGame": "Navrhnout jídelníček pro důstojnický sbor a pro mužstvo. Vytvořit seznam proviantu, který se má nakoupit a zaslat veliteli.",
+    "inGame": "Připravit dle rozpisu dne pokrmy pro mužstvo a velitelksý sbor"
+  },
+  "start": {
+    "place": "Vojenská základna staré Hutě",
+    "time": 0
+  },
+  "priceModifier": 0,
+  "difficulty": 2
+}, {
+  "role": "Partyzán Beskydského odboje",
+  "task": {
+    "preGame": "",
+    "inGame": ""
+  },
+  "start": {
+    "place": "Skautská základna v UH",
+    "time": -2
+  },
+  "priceModifier": 1,
+  "difficulty": 7
+}]

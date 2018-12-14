@@ -21,9 +21,12 @@ const userSchema = new mongoose.Schema({
     name: String,
     gender: String,
     location: String,
-    website: String,
-    picture: String
-  }
+    picture: String,
+    age: String
+  },
+  approved: Boolean,
+  admin: Boolean,
+
 }, { timestamps: true });
 
 /**
