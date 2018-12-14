@@ -5,5 +5,7 @@ block content
   hr
   .row
     .col-md-12
-      h2 Pravidla
-      p bla bla
+      each rule in rules
+        h3 #{rule.title}
+        each p in rule.paragraphs
+           p #{p}

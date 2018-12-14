@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const game = require('../constants/game');
 const roles = require('../constants/roles');
+const rules = require('../constants/rules');
 
 exports.index = (req, res) => {
     res.render('intro', {
@@ -18,7 +19,8 @@ exports.info = (req, res) => {
 
 exports.pravidla = (req, res) => {
     res.render('pravidla', {
-        title: 'Pravidla'
+        title: 'Pravidla',
+        rules,
     });
 };
 
