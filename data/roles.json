@@ -1,10 +1,11 @@
 [{
   "role": "Voják základní služby ChLRA",
   "description": "Voják základní služby je branec, který má nastoupit základní službu u pěšího útvaru na základně Staré hutě. K odvodu se má hlásit v odvodním a vystrojovacím středisku na základně v Uherském Hradišti, odkud vyrazí k plnění povinností vojáka základní služby na základně Staré Hutě",
-  "task": {
-    "preGame": "",
-    "inGame": "Připravit dle rozpisu dne pokrmy pro mužstvo a velitelksý sbor"
-  },
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
   "start": {
     "place": "Skautská základna UH",
     "time": 0
@@ -14,10 +15,12 @@
   "fraction": "cholera"
 }, {
   "role": "Důstojník ChLRA",
-  "task": {
-    "preGame": "",
-    "inGame": ""
-  },
+  "description": "Zkušený a ostřílený bojovník. Pouze veterán jedné z následujících operací: Mutterland, Recyklace, Luxor, Ašraf. Skutečná opora režimu a věrný následovník jeho vůdce - Michaila al Nasraláha.",
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
   "start": {
     "place": "Vojenská základna staré Hutě",
     "time": 0
@@ -27,10 +30,12 @@
   "fraction": "cholera"
 }, {
   "role": "Velitel základny ChLRA",
-  "task": {
-    "preGame": "Veškeré organizační záležitosti stran Cholery a základny na Hutích",
-    "inGame": ""
-  },
+  "description": "Velitel ChLRA (Chřibské lidové armády), jeho oporou je sbor důstojníků.",
+  "pregameTask":"Zajistit organizaci celé frakce Cholera, tzn komunikaci s hráči, donutit hráče aby dojeli. Zajistit základnu na Hutích.",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
   "start": {
     "place": "Vojenská základna staré Hutě",
     "time": 0
@@ -40,10 +45,11 @@
   "fraction": "cholera"
 }, {
   "role": "Pilot letectva ChLRA",
-  "task": {
-    "preGame": "",
-    "inGame": "Připravit dle rozpisu dne pokrmy pro mužstvo a velitelksý sbor"
-  },
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
   "start": {
     "place": "Skautská základna v UH",
     "time": -2
@@ -53,10 +59,11 @@
   "fraction": "cholera"
 }, {
   "role": "Kuchař ChLRA",
-  "task": {
-    "preGame": "Navrhnout jídelníček pro důstojnický sbor a pro mužstvo. Vytvořit seznam proviantu, který se má nakoupit a zaslat veliteli.",
-    "inGame": "Připravit dle rozpisu dne pokrmy pro mužstvo a velitelksý sbor"
-  },
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
   "start": {
     "place": "Vojenská základna staré Hutě",
     "time": 0
@@ -66,10 +73,11 @@
   "fraction": "cholera"
 }, {
   "role": "Partyzán Beskydského odboje",
-  "task": {
-    "preGame": "",
-    "inGame": ""
-  },
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
   "start": {
     "place": "Skautská základna v UH",
     "time": -2
@@ -79,15 +87,30 @@
   "fraction": "bo"
 }, {
   "role": "Partyzán Chřibského hnutí odporu",
-  "task": {
-    "preGame": "",
-    "inGame": ""
-  },
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
   "start": {
     "place": "Skautská základna v UH",
     "time": -2
   },
   "priceModifier": 1,
+  "difficulty": 7,
+  "fraction": "bo"
+}, {
+  "role": "Velitel BO",
+  "pregameTask":"Zajistit koordinaci všech hráčů za frakci BO. ",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
+  "start": {
+    "place": "Skautská základna v UH",
+    "time": -2
+  },
+  "priceModifier": 0,
   "difficulty": 7,
   "fraction": "bo"
 }]

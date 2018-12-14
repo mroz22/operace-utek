@@ -1,10 +1,12 @@
 const User = require('../models/User');
 const game = require('../constants/game');
+const roles = require('../constants/roles');
 
 exports.index = (req, res) => {
     res.render('intro', {
         title: 'Intro',
         game,
+        roles,
     });
 };
 

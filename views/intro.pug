@@ -12,6 +12,18 @@ block content
         p Zdá se, že jediným vhodným řešením je odstavit válečné štváče od moci. To je ale vždy ošemetná záležitost. Zkušení matadoři chřibské politiky a zákulisní hráči však už ví, že v takovém případě je třeba vytočit jedno velmi speciální telefonní číslo. Georg Choroš. Nejen významný filantrop, ale také majitel známé žoldácké agentury, která má na svém kontě mimojiné takové úspěchy, jako například státní převrat v Burkina Faso.
         p Veškeré výše uvedené informace byly samozřejmě označeny jako "fake news". Faktem však zůstává, že žoldácká agentura Primus protectus vypsala výběrová řízení na mnoho zajímavých pozic.
     .row
+      .com-md-12
+        h2 Role
+        p V registraci si můžete vybrat z těchto rolí:
+        table.table-hover.table-bordered
+          thead
+            th Role
+            th A její stručný popis
+          each role in roles
+            tr
+              td #{role.role}
+              td #{role.description}
+    .row
       .col-md-3
       .col-md-3
         img.img.img-responsive(height="400px")(src="img/contractor1.png")
