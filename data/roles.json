@@ -1,15 +1,17 @@
 [{
   "role": "Voják základní služby ChLRA",
+  "description": "Voják základní služby je branec, který má nastoupit základní službu u pěšího útvaru na základně Staré hutě. K odvodu se má hlásit v odvodním a vystrojovacím středisku na základně v Uherském Hradišti, odkud vyrazí k plnění povinností vojáka základní služby na základně Staré Hutě",
   "task": {
     "preGame": "",
     "inGame": "Připravit dle rozpisu dne pokrmy pro mužstvo a velitelksý sbor"
   },
   "start": {
-    "place": "Vojenská základna staré Hutě",
+    "place": "Skautská základna UH",
     "time": 0
   },
   "priceModifier": 1,
-  "difficulty": 5
+  "difficulty": 5,
+  "fraction": "cholera"
 }, {
   "role": "Důstojník ChLRA",
   "task": {
@@ -21,7 +23,8 @@
     "time": 0
   },
   "priceModifier": 1,
-  "difficulty": 5
+  "difficulty": 5,
+  "fraction": "cholera"
 }, {
   "role": "Velitel základny ChLRA",
   "task": {
@@ -33,7 +36,8 @@
     "time": 0
   },
   "priceModifier": 0,
-  "difficulty": 5
+  "difficulty": 5,
+  "fraction": "cholera"
 }, {
   "role": "Pilot letectva ChLRA",
   "task": {
@@ -45,7 +49,8 @@
     "time": -2
   },
   "priceModifier": 1,
-  "difficulty": 7
+  "difficulty": 7,
+  "fraction": "cholera"
 }, {
   "role": "Kuchař ChLRA",
   "task": {
@@ -57,7 +62,8 @@
     "time": 0
   },
   "priceModifier": 0,
-  "difficulty": 2
+  "difficulty": 2,
+  "fraction": "cholera"
 }, {
   "role": "Partyzán Beskydského odboje",
   "task": {
@@ -69,5 +75,19 @@
     "time": -2
   },
   "priceModifier": 1,
-  "difficulty": 7
+  "difficulty": 7,
+  "fraction": "bo"
+}, {
+  "role": "Partyzán Chřibského hnutí odporu",
+  "task": {
+    "preGame": "",
+    "inGame": ""
+  },
+  "start": {
+    "place": "Skautská základna v UH",
+    "time": -2
+  },
+  "priceModifier": 1,
+  "difficulty": 7,
+  "fraction": "bo"
 }]
