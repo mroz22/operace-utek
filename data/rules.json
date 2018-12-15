@@ -1,12 +1,17 @@
 [{
-  "title": "Pravidlo bla",
+  "title": "Roleplaying",
   "paragraphs": [
     "Hraci musi dela to a to",
     "A tohle je druhy odstavec",
     "a tohle je treti"
   ]
 }, {
-  "title": "A takhle se udela druhy nadpis",
+  "title": "Bezpečnost",
+  "paragraphs": [
+    "A zas nejake odstavce"
+  ]
+}, {
+  "title": "Soubojový systém",
   "paragraphs": [
     "A zas nejake odstavce"
   ]
