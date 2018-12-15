@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .row
+      .com-md-12
+        p Registrace probíhá pouze po webu a hráči se registrují samostatně.
+        h2 Role
+        p V registraci si můžete vybrat z těchto rolí:
+        table.table-hover.table-bordered
+          thead
+            th Role
+            th A její stručný popis
+          each role in roles
+            tr
+              td #{role.role}
+              td #{role.description}
+    .row
+
+        p
+          a.btn.btn-raised(href='/signup', role='button') Registrace »
