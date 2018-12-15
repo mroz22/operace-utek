@@ -17,12 +17,12 @@ const { Venues, Users } = require('node-foursquare')({
   secrets: {
     clientId: process.env.FOURSQUARE_ID,
     clientSecret: process.env.FOURSQUARE_SECRET,
-    redirectUrl: process.env.FOURSQUARE_REDIRECT_URL
+    redirectUrl: process.env.FOURSQUARE_REDIRECT_URL,
   },
   foursquare: {
     mode: 'foursquare',
     version: 20140806,
-  }
+  },
 });
 
 /**
@@ -31,7 +31,7 @@ const { Venues, Users } = require('node-foursquare')({
  */
 exports.getApi = (req, res) => {
   res.render('api/index', {
-    title: 'API Examples'
+    title: 'API Examples',
   });
 };
 
@@ -52,7 +52,7 @@ exports.getFoursquare = async (req, res, next) => {
       title: 'Foursquare API',
       trendingVenues,
       venueDetail,
-      userCheckins
+      userCheckins,
     });
   } catch (err) {
     return next(err);
@@ -69,14 +69,14 @@ exports.getTumblr = (req, res, next) => {
     consumer_key: process.env.TUMBLR_KEY,
     consumer_secret: process.env.TUMBLR_SECRET,
     token: token.accessToken,
-    token_secret: token.tokenSecret
+    token_secret: token.tokenSecret,
   });
   client.blogPosts('mmosdotcom.tumblr.com', { type: 'photo' }, (err, data) => {
     if (err) { return next(err); }
     res.render('api/tumblr', {
       title: 'Tumblr API',
       blog: data.blog,
-      photoset: data.posts[0].photos
+      photoset: data.posts[0].photos,
     });
   });
 };
@@ -92,7 +92,7 @@ exports.getFacebook = (req, res, next) => {
     if (err) { return next(err); }
     res.render('api/facebook', {
       title: 'Facebook API',
-      profile
+      profile,
     });
   });
 };
@@ -111,7 +111,7 @@ exports.getScraping = (req, res, next) => {
     });
     res.render('api/scraping', {
       title: 'Web Scraping',
-      links
+      links,
     });
   });
 };
@@ -126,7 +126,7 @@ exports.getGithub = async (req, res, next) => {
     const { data: repo } = await github.repos.get({ owner: 'sahat', repo: 'hackathon-starter' });
     res.render('api/github', {
       title: 'GitHub API',
-      repo
+      repo,
     });
   } catch (error) {
     next(error);
@@ -139,7 +139,7 @@ exports.getGithub = async (req, res, next) => {
  */
 exports.getAviary = (req, res) => {
   res.render('api/aviary', {
-    title: 'Aviary API'
+    title: 'Aviary API',
   });
 };
 
@@ -150,7 +150,7 @@ exports.getAviary = (req, res) => {
 exports.getNewYorkTimes = (req, res, next) => {
   const query = {
     'list-name': 'young-adult',
-    'api-key': process.env.NYT_KEY
+    'api-key': process.env.NYT_KEY,
   };
   request.get({ url: 'http://api.nytimes.com/svc/books/v2/lists', qs: query }, (err, request, body) => {
     if (err) { return next(err); }
@@ -160,7 +160,7 @@ exports.getNewYorkTimes = (req, res, next) => {
     const books = JSON.parse(body).results;
     res.render('api/nyt', {
       title: 'New York Times API',
-      books
+      books,
     });
   });
 };
@@ -172,42 +172,39 @@ exports.getNewYorkTimes = (req, res, next) => {
 exports.getLastfm = async (req, res, next) => {
   const lastfm = new LastFmNode({
     api_key: process.env.LASTFM_KEY,
-    secret: process.env.LASTFM_SECRET
+    secret: process.env.LASTFM_SECRET,
   });
-  const getArtistInfo = () =>
-    new Promise((resolve, reject) => {
-      lastfm.request('artist.getInfo', {
-        artist: 'Roniit',
-        handlers: {
-          success: resolve,
-          error: reject
-        }
-      });
+  const getArtistInfo = () => new Promise((resolve, reject) => {
+    lastfm.request('artist.getInfo', {
+      artist: 'Roniit',
+      handlers: {
+        success: resolve,
+        error: reject,
+      },
     });
-  const getArtistTopTracks = () =>
-    new Promise((resolve, reject) => {
-      lastfm.request('artist.getTopTracks', {
-        artist: 'Roniit',
-        handlers: {
-          success: ({ toptracks }) => {
-            resolve(toptracks.track.slice(0, 10));
-          },
-          error: reject
-        }
-      });
+  });
+  const getArtistTopTracks = () => new Promise((resolve, reject) => {
+    lastfm.request('artist.getTopTracks', {
+      artist: 'Roniit',
+      handlers: {
+        success: ({ toptracks }) => {
+          resolve(toptracks.track.slice(0, 10));
+        },
+        error: reject,
+      },
     });
-  const getArtistTopAlbums = () =>
-    new Promise((resolve, reject) => {
-      lastfm.request('artist.getTopAlbums', {
-        artist: 'Roniit',
-        handlers: {
-          success: ({ topalbums }) => {
-            resolve(topalbums.album.slice(0, 3));
-          },
-          error: reject
-        }
-      });
+  });
+  const getArtistTopAlbums = () => new Promise((resolve, reject) => {
+    lastfm.request('artist.getTopAlbums', {
+      artist: 'Roniit',
+      handlers: {
+        success: ({ topalbums }) => {
+          resolve(topalbums.album.slice(0, 3));
+        },
+        error: reject,
+      },
     });
+  });
   try {
     const { artist: artistInfo } = await getArtistInfo();
     const topTracks = await getArtistTopTracks();
@@ -220,11 +217,11 @@ exports.getLastfm = async (req, res, next) => {
       stats: artistInfo.stats,
       similar: artistInfo.similar ? artistInfo.similar.artist : [],
       topTracks,
-      topAlbums
+      topAlbums,
     };
     res.render('api/lastfm', {
       title: 'Last.fm API',
-      artist
+      artist,
     });
   } catch (err) {
     if (err.error !== undefined) {
@@ -234,12 +231,12 @@ exports.getLastfm = async (req, res, next) => {
         // potentially handle each code uniquely
         case 10: // Invalid API key
           res.render('api/lastfm', {
-            error: err
+            error: err,
           });
           break;
         default:
           res.render('api/lastfm', {
-            error: err
+            error: err,
           });
       }
     } else {
@@ -258,17 +255,17 @@ exports.getTwitter = async (req, res, next) => {
     consumer_key: process.env.TWITTER_KEY,
     consumer_secret: process.env.TWITTER_SECRET,
     access_token: token.accessToken,
-    access_token_secret: token.tokenSecret
+    access_token_secret: token.tokenSecret,
   });
   try {
     const { data: { statuses: tweets } } = await T.get('search/tweets', {
       q: 'nodejs since:2013-01-01',
       geocode: '40.71448,-74.00598,5mi',
-      count: 10
+      count: 10,
     });
     res.render('api/twitter', {
       title: 'Twitter API',
-      tweets
+      tweets,
     });
   } catch (error) {
     next(error);
@@ -294,7 +291,7 @@ exports.postTwitter = (req, res, next) => {
     consumer_key: process.env.TWITTER_KEY,
     consumer_secret: process.env.TWITTER_SECRET,
     access_token: token.accessToken,
-    access_token_secret: token.tokenSecret
+    access_token_secret: token.tokenSecret,
   });
   T.post('statuses/update', { status: req.body.tweet }, (err) => {
     if (err) { return next(err); }
@@ -313,23 +310,22 @@ exports.getSteam = async (req, res, next) => {
   const getAsync = promisify(request.get);
 
   // get the list of the recently played games, pick the most recent one and get its achievements
-  const getPlayerAchievements = () =>
-    getAsync({ url: 'http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/', qs: params, json: true })
-      .then(({ request, body }) => {
-        if (request.statusCode === 401) {
-          throw new Error('Invalid Steam API Key');
-        }
-        if (body.response.total_count > 0) {
-          params.appid = body.response.games[0].appid;
-          return getAsync({ url: 'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/', qs: params, json: true })
-            .then(({ request, body }) => {
-              if (request.statusCode === 401) {
-                throw new Error('Invalid Steam API Key');
-              }
-              return body;
-            });
-        }
-      });
+  const getPlayerAchievements = () => getAsync({ url: 'http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/', qs: params, json: true })
+    .then(({ request, body }) => {
+      if (request.statusCode === 401) {
+        throw new Error('Invalid Steam API Key');
+      }
+      if (body.response.total_count > 0) {
+        params.appid = body.response.games[0].appid;
+        return getAsync({ url: 'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/', qs: params, json: true })
+          .then(({ request, body }) => {
+            if (request.statusCode === 401) {
+              throw new Error('Invalid Steam API Key');
+            }
+            return body;
+          });
+      }
+    });
   const getPlayerSummaries = () => {
     params.steamids = steamId;
     return getAsync({ url: 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/', qs: params, json: true })
@@ -359,7 +355,7 @@ exports.getSteam = async (req, res, next) => {
       title: 'Steam Web API',
       ownedGames: ownedGames.response,
       playerAchievemments: playerAchievements ? playerAchievements.playerstats : null,
-      playerSummary: playerSummaries.response.players[0]
+      playerSummary: playerSummaries.response.players[0],
     });
   } catch (err) {
     next(err);
@@ -373,7 +369,7 @@ exports.getSteam = async (req, res, next) => {
 exports.getStripe = (req, res) => {
   res.render('api/stripe', {
     title: 'Stripe API',
-    publishableKey: process.env.STRIPE_PKEY
+    publishableKey: process.env.STRIPE_PKEY,
   });
 };
 
@@ -387,7 +383,7 @@ exports.postStripe = (req, res) => {
     amount: 395,
     currency: 'usd',
     source: stripeToken,
-    description: stripeEmail
+    description: stripeEmail,
   }, (err) => {
     if (err && err.type === 'StripeCardError') {
       req.flash('errors', { msg: 'Your card has been declined.' });
@@ -404,7 +400,7 @@ exports.postStripe = (req, res) => {
  */
 exports.getTwilio = (req, res) => {
   res.render('api/twilio', {
-    title: 'Twilio API'
+    title: 'Twilio API',
   });
 };
 
@@ -426,7 +422,7 @@ exports.postTwilio = (req, res, next) => {
   const message = {
     to: req.body.number,
     from: '+13472235148',
-    body: req.body.message
+    body: req.body.message,
   };
   twilio.messages.create(message).then((sentMessage) => {
     req.flash('success', { msg: `Text send to ${sentMessage.to}` });
@@ -440,7 +436,7 @@ exports.postTwilio = (req, res, next) => {
  */
 exports.getClockwork = (req, res) => {
   res.render('api/clockwork', {
-    title: 'Clockwork SMS API'
+    title: 'Clockwork SMS API',
   });
 };
 
@@ -452,7 +448,7 @@ exports.postClockwork = (req, res, next) => {
   const message = {
     To: req.body.telephone,
     From: 'Hackathon',
-    Content: 'Hello from the Hackathon Starter'
+    Content: 'Hello from the Hackathon Starter',
   };
   clockwork.sendSms(message, (err, responseData) => {
     if (err) { return next(err.errDesc); }
@@ -472,7 +468,7 @@ exports.getLinkedin = (req, res, next) => {
     if (err) { return next(err); }
     res.render('api/linkedin', {
       title: 'LinkedIn API',
-      profile: $in
+      profile: $in,
     });
   });
 };
@@ -496,7 +492,7 @@ exports.getInstagram = async (req, res, next) => {
       title: 'Instagram API',
       usernames: searchByUsername,
       userById: searchByUserId,
-      myRecentMedia
+      myRecentMedia,
     });
   } catch (error) {
     next(error);
@@ -511,25 +507,25 @@ exports.getPayPal = (req, res, next) => {
   paypal.configure({
     mode: 'sandbox',
     client_id: process.env.PAYPAL_ID,
-    client_secret: process.env.PAYPAL_SECRET
+    client_secret: process.env.PAYPAL_SECRET,
   });
 
   const paymentDetails = {
     intent: 'sale',
     payer: {
-      payment_method: 'paypal'
+      payment_method: 'paypal',
     },
     redirect_urls: {
       return_url: process.env.PAYPAL_RETURN_URL,
-      cancel_url: process.env.PAYPAL_CANCEL_URL
+      cancel_url: process.env.PAYPAL_CANCEL_URL,
     },
     transactions: [{
       description: 'Hackathon Starter',
       amount: {
         currency: 'USD',
-        total: '1.99'
-      }
-    }]
+        total: '1.99',
+      },
+    }],
   };
 
   paypal.payment.create(paymentDetails, (err, payment) => {
@@ -539,7 +535,7 @@ exports.getPayPal = (req, res, next) => {
     for (let i = 0; i < links.length; i++) {
       if (links[i].rel === 'approval_url') {
         res.render('api/paypal', {
-          approvalUrl: links[i].href
+          approvalUrl: links[i].href,
         });
       }
     }
@@ -556,7 +552,7 @@ exports.getPayPalSuccess = (req, res) => {
   paypal.payment.execute(paymentId, paymentDetails, (err) => {
     res.render('api/paypal', {
       result: true,
-      success: !err
+      success: !err,
     });
   });
 };
@@ -569,7 +565,7 @@ exports.getPayPalCancel = (req, res) => {
   req.session.paymentId = null;
   res.render('api/paypal', {
     result: true,
-    canceled: true
+    canceled: true,
   });
 };
 
@@ -594,7 +590,7 @@ exports.getLob = (req, res, next) => {
 
 exports.getFileUpload = (req, res) => {
   res.render('api/upload', {
-    title: 'File Upload'
+    title: 'File Upload',
   });
 };
 
@@ -613,7 +609,7 @@ exports.getPinterest = (req, res, next) => {
     if (err) { return next(err); }
     res.render('api/pinterest', {
       title: 'Pinterest API',
-      boards: body.data
+      boards: body.data,
     });
   });
 };
@@ -639,7 +635,7 @@ exports.postPinterest = (req, res, next) => {
     board: req.body.board,
     note: req.body.note,
     link: req.body.link,
-    image_url: req.body.image_url
+    image_url: req.body.image_url,
   };
 
   request.post('https://api.pinterest.com/v1/pins/', { qs: { access_token: token.accessToken }, form: formData }, (err, request, body) => {
@@ -656,6 +652,6 @@ exports.postPinterest = (req, res, next) => {
 exports.getGoogleMaps = (req, res) => {
   res.render('api/google-maps', {
     title: 'Google Maps API',
-    google_map_api_key: process.env.GOOGLE_MAP_API_KEY
+    google_map_api_key: process.env.GOOGLE_MAP_API_KEY,
   });
 };

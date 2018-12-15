@@ -15,7 +15,7 @@ exports.getLogin = (req, res) => {
     return res.redirect('/');
   }
   res.render('account/login', {
-    title: 'Login'
+    title: 'Login',
   });
 };
 
@@ -71,7 +71,7 @@ exports.getSignup = (req, res) => {
     return res.redirect('/');
   }
   res.render('account/signup', {
-    title: 'Create Account'
+    title: 'Create Account',
   });
 };
 
@@ -94,7 +94,7 @@ exports.postSignup = (req, res, next) => {
 
   const user = new User({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   });
 
   User.findOne({ email: req.body.email }, (err, existingUser) => {
@@ -121,7 +121,7 @@ exports.postSignup = (req, res, next) => {
  */
 exports.getAccount = (req, res) => {
   res.render('account/profile', {
-    title: 'Account Management'
+    title: 'Account Management',
   });
 };
 
@@ -236,7 +236,7 @@ exports.getReset = (req, res, next) => {
         return res.redirect('/forgot');
       }
       res.render('account/reset', {
-        title: 'Password Reset'
+        title: 'Password Reset',
       });
     });
 };
@@ -256,25 +256,24 @@ exports.postReset = (req, res, next) => {
     return res.redirect('back');
   }
 
-  const resetPassword = () =>
-    User
-      .findOne({ passwordResetToken: req.params.token })
-      .where('passwordResetExpires').gt(Date.now())
-      .then((user) => {
-        if (!user) {
-          req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
-          return res.redirect('back');
-        }
-        user.password = req.body.password;
-        user.passwordResetToken = undefined;
-        user.passwordResetExpires = undefined;
-        return user.save().then(() => new Promise((resolve, reject) => {
-          req.logIn(user, (err) => {
-            if (err) { return reject(err); }
-            resolve(user);
-          });
-        }));
-      });
+  const resetPassword = () => User
+    .findOne({ passwordResetToken: req.params.token })
+    .where('passwordResetExpires').gt(Date.now())
+    .then((user) => {
+      if (!user) {
+        req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+        return res.redirect('back');
+      }
+      user.password = req.body.password;
+      user.passwordResetToken = undefined;
+      user.passwordResetExpires = undefined;
+      return user.save().then(() => new Promise((resolve, reject) => {
+        req.logIn(user, (err) => {
+          if (err) { return reject(err); }
+          resolve(user);
+        });
+      }));
+    });
 
   const sendResetPasswordEmail = (user) => {
     if (!user) { return; }
@@ -282,14 +281,14 @@ exports.postReset = (req, res, next) => {
       service: 'SendGrid',
       auth: {
         user: process.env.SENDGRID_USER,
-        pass: process.env.SENDGRID_PASSWORD
-      }
+        pass: process.env.SENDGRID_PASSWORD,
+      },
     });
     const mailOptions = {
       to: user.email,
       from: 'hackathon@starter.com',
       subject: 'Your Hackathon Starter password has been changed',
-      text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`
+      text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`,
     };
     return transporter.sendMail(mailOptions)
       .then(() => {
@@ -302,11 +301,11 @@ exports.postReset = (req, res, next) => {
             service: 'SendGrid',
             auth: {
               user: process.env.SENDGRID_USER,
-              pass: process.env.SENDGRID_PASSWORD
+              pass: process.env.SENDGRID_PASSWORD,
             },
             tls: {
-              rejectUnauthorized: false
-            }
+              rejectUnauthorized: false,
+            },
           });
           return transporter.sendMail(mailOptions)
             .then(() => {
@@ -334,7 +333,7 @@ exports.getForgot = (req, res) => {
     return res.redirect('/');
   }
   res.render('account/forgot', {
-    title: 'Forgot Password'
+    title: 'Forgot Password',
   });
 };
 
@@ -356,19 +355,18 @@ exports.postForgot = (req, res, next) => {
   const createRandomToken = randomBytesAsync(16)
     .then(buf => buf.toString('hex'));
 
-  const setRandomToken = token =>
-    User
-      .findOne({ email: req.body.email })
-      .then((user) => {
-        if (!user) {
-          req.flash('errors', { msg: 'Account with that email address does not exist.' });
-        } else {
-          user.passwordResetToken = token;
-          user.passwordResetExpires = Date.now() + 3600000; // 1 hour
-          user = user.save();
-        }
-        return user;
-      });
+  const setRandomToken = token => User
+    .findOne({ email: req.body.email })
+    .then((user) => {
+      if (!user) {
+        req.flash('errors', { msg: 'Account with that email address does not exist.' });
+      } else {
+        user.passwordResetToken = token;
+        user.passwordResetExpires = Date.now() + 3600000; // 1 hour
+        user = user.save();
+      }
+      return user;
+    });
 
   const sendForgotPasswordEmail = (user) => {
     if (!user) { return; }
@@ -377,8 +375,8 @@ exports.postForgot = (req, res, next) => {
       service: 'SendGrid',
       auth: {
         user: process.env.SENDGRID_USER,
-        pass: process.env.SENDGRID_PASSWORD
-      }
+        pass: process.env.SENDGRID_PASSWORD,
+      },
     });
     const mailOptions = {
       to: user.email,
@@ -387,7 +385,7 @@ exports.postForgot = (req, res, next) => {
       text: `You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n
         Please click on the following link, or paste this into your browser to complete the process:\n\n
         http://${req.headers.host}/reset/${token}\n\n
-        If you did not request this, please ignore this email and your password will remain unchanged.\n`
+        If you did not request this, please ignore this email and your password will remain unchanged.\n`,
     };
     return transporter.sendMail(mailOptions)
       .then(() => {
@@ -400,11 +398,11 @@ exports.postForgot = (req, res, next) => {
             service: 'SendGrid',
             auth: {
               user: process.env.SENDGRID_USER,
-              pass: process.env.SENDGRID_PASSWORD
+              pass: process.env.SENDGRID_PASSWORD,
             },
             tls: {
-              rejectUnauthorized: false
-            }
+              rejectUnauthorized: false,
+            },
           });
           return transporter.sendMail(mailOptions)
             .then(() => {

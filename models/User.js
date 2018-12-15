@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     gender: String,
     location: String,
     picture: String,
-    age: String
+    age: String,
   },
   approved: Boolean,
   admin: Boolean,

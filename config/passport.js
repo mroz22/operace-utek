@@ -65,7 +65,7 @@ passport.use(new FacebookStrategy({
   clientSecret: process.env.FACEBOOK_SECRET,
   callbackURL: '/auth/facebook/callback',
   profileFields: ['name', 'email', 'link', 'locale', 'timezone', 'gender'],
-  passReqToCallback: true
+  passReqToCallback: true,
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
     User.findOne({ facebook: profile.id }, (err, existingUser) => {
@@ -125,7 +125,7 @@ passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_ID,
   clientSecret: process.env.GITHUB_SECRET,
   callbackURL: '/auth/github/callback',
-  passReqToCallback: true
+  passReqToCallback: true,
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
     User.findOne({ github: profile.id }, (err, existingUser) => {
@@ -184,7 +184,7 @@ passport.use(new TwitterStrategy({
   consumerKey: process.env.TWITTER_KEY,
   consumerSecret: process.env.TWITTER_SECRET,
   callbackURL: '/auth/twitter/callback',
-  passReqToCallback: true
+  passReqToCallback: true,
 }, (req, accessToken, tokenSecret, profile, done) => {
   if (req.user) {
     User.findOne({ twitter: profile.id }, (err, existingUser) => {
@@ -238,7 +238,7 @@ passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_ID,
   clientSecret: process.env.GOOGLE_SECRET,
   callbackURL: '/auth/google/callback',
-  passReqToCallback: true
+  passReqToCallback: true,
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
     User.findOne({ google: profile.id }, (err, existingUser) => {
@@ -297,7 +297,7 @@ passport.use(new LinkedInStrategy({
   clientSecret: process.env.LINKEDIN_SECRET,
   callbackURL: process.env.LINKEDIN_CALLBACK_URL,
   scope: ['r_basicprofile', 'r_emailaddress'],
-  passReqToCallback: true
+  passReqToCallback: true,
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
     User.findOne({ linkedin: profile.id }, (err, existingUser) => {
@@ -358,7 +358,7 @@ passport.use(new InstagramStrategy({
   clientID: process.env.INSTAGRAM_ID,
   clientSecret: process.env.INSTAGRAM_SECRET,
   callbackURL: '/auth/instagram/callback',
-  passReqToCallback: true
+  passReqToCallback: true,
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
     User.findOne({ instagram: profile.id }, (err, existingUser) => {
@@ -414,7 +414,7 @@ passport.use('tumblr', new OAuthStrategy({
   consumerKey: process.env.TUMBLR_KEY,
   consumerSecret: process.env.TUMBLR_SECRET,
   callbackURL: '/auth/tumblr/callback',
-  passReqToCallback: true
+  passReqToCallback: true,
 },
 (req, token, tokenSecret, profile, done) => {
   User.findById(req.user._id, (err, user) => {
@@ -435,7 +435,7 @@ passport.use('foursquare', new OAuth2Strategy({
   clientID: process.env.FOURSQUARE_ID,
   clientSecret: process.env.FOURSQUARE_SECRET,
   callbackURL: process.env.FOURSQUARE_REDIRECT_URL,
-  passReqToCallback: true
+  passReqToCallback: true,
 },
 (req, accessToken, refreshToken, profile, done) => {
   User.findById(req.user._id, (err, user) => {
@@ -520,7 +520,7 @@ passport.use('pinterest', new OAuth2Strategy({
   clientID: process.env.PINTEREST_ID,
   clientSecret: process.env.PINTEREST_SECRET,
   callbackURL: process.env.PINTEREST_REDIRECT_URL,
-  passReqToCallback: true
+  passReqToCallback: true,
 },
 (req, accessToken, refreshToken, profile, done) => {
   User.findById(req.user._id, (err, user) => {
