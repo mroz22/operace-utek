@@ -84,7 +84,7 @@
   },
   "priceModifier": 1,
   "difficulty": 7,
-  "fraction": "bo"
+  "fraction": "BO"
 }, {
   "role": "Partyzán Chřibského hnutí odporu",
   "pregameTask":"",
@@ -98,10 +98,10 @@
   },
   "priceModifier": 1,
   "difficulty": 7,
-  "fraction": "bo"
+  "fraction": "BO"
 }, {
-  "role": "Velitel BO",
-  "pregameTask":"Zajistit koordinaci všech hráčů za frakci BO. ",
+  "role": "Žoldák agentury Primus Protectus",
+  "pregameTask":"",
   "ingameTasks": [{
     "time": null,
     "description": ""
@@ -112,5 +112,19 @@
   },
   "priceModifier": 0,
   "difficulty": 7,
-  "fraction": "bo"
+  "fraction": "xx"
+}, {
+  "role": "Georg Choroš",
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
+  "start": {
+    "place": "Skautská základna v UH",
+    "time": -2
+  },
+  "priceModifier": 0,
+  "difficulty": 7,
+  "fraction": "xx"
 }]

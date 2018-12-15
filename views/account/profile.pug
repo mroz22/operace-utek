@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .pb-2.mt-2.mb-4.border-bottom
-    h3 Profil uchazeče
+    h3 Skutečné údaje
 
   form(action='/account/profile', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
@@ -15,30 +15,36 @@ block content
       .col-md-7
         input.form-control(type='text', name='name', id='name', value=user.profile.name, autocomplete='name')
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right Pohlaví
-      .col-sm-6
-        label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
-          span Muž
-        label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
-          span Žena
-        label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='other', name='gender', value='other', data-toggle='radio')
-          span Jiný
-    .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='location') Město
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='age') Věk
       .col-md-7
-        input.form-control(type='text', name='location', id='location', value=user.profile.location, autocomplete)
-    .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='location') Věk
-      .col-md-7
-        input.form-control(type='text', name='age', id='age', value=user.profile.location, autocomplete)
+        input.form-control(type='text', name='age', id='age', value=user.profile.age, autocomplete)
     .form-group
       .offset-sm-3.col-md-7.pl-2
         button.btn.btn.btn-primary(type='submit')
           i.fas.fa-pencil-alt.fa-sm
-          | Aktualizovat profil
+          | Aktualizovat
+
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Herní údaje
+
+  form(action='/account/role', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='roleName') Jméno
+      .col-md-7
+        input.form-control(type='text', name='name', id='roleName', value=user.role.name, autocomplete='name')
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='roleRole') Role
+      .col-md-7
+        select.form-control(name='role', id='roleRole', value=user.role.role)
+          each role in roles
+            option(value=role.role) #{role.role}
+    .form-group
+        .offset-sm-3.col-md-7.pl-2
+            button.btn.btn.btn-primary(type='submit')
+                i.fas.fa-pencil-alt.fa-sm
+                | Aktualizovat
+
 
   .pb-2.mt-2.mb-4.border-bottom
     h3 Změnit heslo

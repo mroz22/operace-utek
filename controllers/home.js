@@ -1,6 +1,7 @@
 const User = require('../models/User');
-const roles = require('../constants/roles');
+const { roles, rolesByFraction } = require('../constants/roles');
 const rules = require('../constants/rules');
+const fractions = require('../constants/fractions');
 
 exports.index = (req, res) => {
   res.render('intro', {
@@ -25,7 +26,8 @@ exports.pravidla = (req, res) => {
 exports.registrace = (req, res) => {
   res.render('registrace', {
     title: 'Registrace',
-    roles,
+    rolesByFraction,
+    fractions,
   });
 };
 

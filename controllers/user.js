@@ -4,6 +4,8 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
 
+const { roles } = require('../constants/roles');
+
 const randomBytesAsync = promisify(crypto.randomBytes);
 
 /**
@@ -122,6 +124,7 @@ exports.postSignup = (req, res, next) => {
 exports.getAccount = (req, res) => {
   res.render('account/profile', {
     title: 'Account Management',
+    roles,
   });
 };
 
@@ -139,13 +142,10 @@ exports.postUpdateProfile = (req, res, next) => {
     req.flash('errors', errors);
     return res.redirect('/account');
   }
-
   User.findById(req.user.id, (err, user) => {
     if (err) { return next(err); }
     user.email = req.body.email || '';
     user.profile.name = req.body.name || '';
-    user.profile.gender = req.body.gender || '';
-    user.profile.location = req.body.location || '';
     user.profile.age = req.body.age || '';
     user.save((err) => {
       if (err) {
@@ -156,6 +156,27 @@ exports.postUpdateProfile = (req, res, next) => {
         return next(err);
       }
       req.flash('success', { msg: 'Profile information has been updated.' });
+      res.redirect('/account');
+    });
+  });
+};
+
+exports.postUpdateRole = (req, res, next) => {
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.redirect('/account');
+  }
+    console.log(req.body);
+  User.findById(req.user.id, (err, user) => {
+    if (err) { return next(err); }
+    user.role.role = req.body.role || '';
+    user.role.name = req.body.name || '';
+    user.save((err) => {
+      if (err) {
+        return next(err);
+      }
+      req.flash('success', { msg: 'Informace o roli byly uloženy' });
       res.redirect('/account');
     });
   });

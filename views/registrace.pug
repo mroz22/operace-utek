@@ -2,19 +2,21 @@ extends layout
 
 block content
     .row
-      .com-md-12
-        p Registrace probíhá pouze po webu a hráči se registrují samostatně.
-        h2 Role
-        p V registraci si můžete vybrat z těchto rolí:
-        table.table-hover.table-bordered
-          thead
-            th Role
-            th A její stručný popis
-          each role in roles
-            tr
-              td #{role.role}
-              td #{role.description}
-    .row
-
-        p
-          a.btn.btn-raised(href='/signup', role='button') Registrace »
+      .col-md-12
+        each fractionRoles, key in rolesByFraction
+          h3 #{key}
+          p #{fractions[key].description}
+          p Podmínky vítězství: #{fractions[key].victoryCondition}
+          table.table-hover.table-bordered(style="table-layout: fixed")
+            thead
+              th(width="20%") Role
+              th(width="60%") A její stručný popis
+              th(width="20%") Obtížnost
+            each fractionRole in fractionRoles
+              tr
+                td #{fractionRole.role}
+                td #{fractionRole.description}
+                td #{fractionRole.difficulty}
+          br
+      p
+        a.btn.btn-raised(href='/signup', role='button') Registrace »

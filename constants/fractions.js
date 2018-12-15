@@ -1,5 +1,5 @@
 const fs = require('fs');
 
-const rules = JSON.parse(fs.readFileSync('data/rules.json', 'utf-8'));
+const fractions = JSON.parse(fs.readFileSync('data/fractions.json', 'utf-8'));
 
-module.exports = rules;
+module.exports = fractions;

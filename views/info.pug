@@ -3,10 +3,7 @@ extends layout
 block content
   .row
     .col-md-12
-      h2 Organizační
-      p Místo: Staré Hutě, Morava.
-      p Datum: Neupřesněno
-      h2 Co to bude
-      p Akční terénní hra.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
+       each section in game.organization
+         h2 #{section.title}
+         each p in section.paragraphs
+           p #{p}
