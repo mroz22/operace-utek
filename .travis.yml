@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "8"
   - "10"
-services: mongodb  
-cache:  
+services: mongodb
+cache:
   directories:
     - "node_modules"
 sudo: false
@@ -12,3 +12,8 @@ install:
 script:
   - npm run lint
   - npm test
+deploy:
+  provider: heroku
+  app: operace
+  api_key:
+    secure: $HEROKU_API_KEY
