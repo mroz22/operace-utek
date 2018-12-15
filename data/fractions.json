@@ -1,0 +1,41 @@
+{
+  "name": "Operace XXX",
+  "description": "Super akce",
+  "intro": [
+    "Televizní stanice Vostok nedávno odvísílala reportáž plnou závažných zjištění. Podle reportáže byla na základně ChLRA (Chřibská lidově republikánská armáda) zaznamenána zvýšená aktivita personálu a techniky. Podle dobrého zdroje, jehož jméno redakce zná ale neuvádí, sledují počínání armádních špiček představitelé politického vedení Chřibské lidové republiky s krajní nelibostí. Mají totiž ještě stále na paměti neblahé důsledky agrese chřibských vojsk proti Valašským partyzánům. Okolní státy tehdy uvalili na nejvyšší chřibské politiky a oligarchy embargo, v důsledku čehož byl zaražen přísun luxusního zboží (elektronika apple, kvalitní whisky a tabák...).",
+    "Zdá se, že jediným vhodným řešením je odstavit válečné štváče od moci. To je ale vždy ošemetná záležitost. Zkušení matadoři chřibské politiky a zákulisní hráči však už ví, že v takovém případě je třeba vytočit jedno velmi speciální telefonní číslo. Georg Choroš. Nejen významný filantrop, ale také majitel známé žoldácké agentury, která má na svém kontě mimojiné takové úspěchy, jako například státní převrat v Burkina Faso.",
+    "Veškeré výše uvedené informace byly samozřejmě označeny jako \"fake news\". Faktem však zůstává, že žoldácká agentura Primus protectus vypsala výběrová řízení na mnoho zajímavých pozic."
+  ],
+  "organization": [{
+    "title": "Co",
+    "paragraphs": [
+      "Zážitková terénní hra s prvky kryptografie, airsoftu a larpu. Míra naplnění jednotlivých složek se liší podle zvolené role."
+    ]
+  }, {
+    "title": "Pro koho",
+    "paragraphs": [
+      "Účast od 18 let. Po domluvě je možná výjimka.",
+      "Účast je na doporučení, tzn. známí a známý známých, nebo na pozvánku. Případně po domluvě.",
+      "Nezbytná je základní psychická a fyzická odolnost, schopnost pohybu v terénu a smysl pro fair play. Naopak není nutné mít airsoftové  vybavení, výběr rolí je široký."
+    ]
+  }, {
+    "title": "Kdy",
+    "paragraphs": [
+      "XXXX"
+    ]
+  }, {
+    "title": "Kde",
+    "paragraphs": [
+      "Uherské Hradiště / Staré Hutě / Chřiby. Detaily, kde budete začínat, závisí na zvolené roli"
+    ]
+  }],
+  "roles": {
+    "Voják základní služby ChLRA": 15,
+    "Důstojník ChLRA": 5,
+    "Velitel základny ChLRA": 1,
+    "Pilot letectva ChLRA": 2,
+    "Kuchař ChLRA": 1,
+    "Partyzán Beskydského odboje": 10,
+    "Partyzán Chřibského hnutí odporu": 10
+  }
+}
