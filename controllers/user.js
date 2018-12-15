@@ -167,7 +167,7 @@ exports.postUpdateRole = (req, res, next) => {
     req.flash('errors', errors);
     return res.redirect('/account');
   }
-    console.log(req.body);
+  console.log(req.body);
   User.findById(req.user.id, (err, user) => {
     if (err) { return next(err); }
     user.role.role = req.body.role || '';
