@@ -2,6 +2,8 @@ const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const { roles } = require('../constants/roles');
+const sex = require('../constants/sex');
+const nationalities = require('../constants/nationalities');
 
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
@@ -32,7 +34,15 @@ const userSchema = new mongoose.Schema({
     role: {
       type: String,
       enum: ['', ...roles.map(role => role.role).filter(onlyUnique)],
-    }
+    },
+    nationality: {
+      type: String,
+      enum: nationalities,
+    },
+    sex: {
+      type: String,
+      enum: sex,
+    },
   },
   approved: Boolean,
   admin: Boolean,

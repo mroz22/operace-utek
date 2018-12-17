@@ -12,7 +12,8 @@
   },
   "priceModifier": 1,
   "difficulty": 5,
-  "fraction": "cholera"
+  "fraction": "cholera",
+  "count": 10
 }, {
   "role": "Důstojník ChLRA",
   "description": "Zkušený a ostřílený bojovník. Pouze veterán jedné z následujících operací: Mutterland, Recyklace, Luxor, Ašraf. Skutečná opora režimu a věrný následovník jeho vůdce - Michaila al Nasraláha.",
@@ -27,7 +28,8 @@
   },
   "priceModifier": 1,
   "difficulty": 5,
-  "fraction": "cholera"
+  "fraction": "cholera",
+  "count": 5
 }, {
   "role": "Velitel základny ChLRA",
   "description": "Velitel ChLRA (Chřibské lidové armády), jeho oporou je sbor důstojníků.",
@@ -42,7 +44,8 @@
   },
   "priceModifier": 0,
   "difficulty": 5,
-  "fraction": "cholera"
+  "fraction": "cholera",
+  "count": 1
 }, {
   "role": "Pilot letectva ChLRA",
   "pregameTask":"",
@@ -56,7 +59,8 @@
   },
   "priceModifier": 1,
   "difficulty": 7,
-  "fraction": "cholera"
+  "fraction": "cholera",
+  "count": 2
 }, {
   "role": "Kuchař ChLRA",
   "pregameTask":"",
@@ -70,7 +74,8 @@
   },
   "priceModifier": 0,
   "difficulty": 2,
-  "fraction": "cholera"
+  "fraction": "cholera",
+  "count": 1
 }, {
   "role": "Partyzán Beskydského odboje",
   "pregameTask":"",
@@ -84,7 +89,8 @@
   },
   "priceModifier": 1,
   "difficulty": 7,
-  "fraction": "BO"
+  "fraction": "BO",
+  "count": 5
 }, {
   "role": "Partyzán Chřibského hnutí odporu",
   "pregameTask":"",
@@ -98,7 +104,8 @@
   },
   "priceModifier": 1,
   "difficulty": 7,
-  "fraction": "BO"
+  "fraction": "BO",
+  "count": 4
 }, {
   "role": "Žoldák agentury Primus Protectus",
   "pregameTask":"",
@@ -112,7 +119,8 @@
   },
   "priceModifier": 0,
   "difficulty": 7,
-  "fraction": "xx"
+  "fraction": "xx",
+  "count": 5
 }, {
   "role": "Georg Choroš",
   "pregameTask":"",
@@ -126,5 +134,6 @@
   },
   "priceModifier": 0,
   "difficulty": 7,
-  "fraction": "xx"
+  "fraction": "xx",
+  "count": 0
 }]

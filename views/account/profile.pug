@@ -37,8 +37,16 @@ block content
       label.col-md-3.col-form-label.font-weight-bold.text-right(for='roleRole') Role
       .col-md-7
         select.form-control(name='role', id='roleRole', value=user.role.role)
-          each role in roles
-            option(value=role.role) #{role.role}
+          option(value=user.role.role) #{user.role.role}
+          each role in rolesUtils.roles
+            option(value=role.role disabled=rolesUtils.isDisabled(role)) (#{rolesUtils.getRemainingCount(role)}) - #{role.role}
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='roleNationality') Národnost
+      .col-md-7
+        select.form-control(name='nationality', id='roleNationality', value=user.role.nationality)
+          each nationality in nationalities
+            option(value=nationality) #{nationality}
+
     .form-group
         .offset-sm-3.col-md-7.pl-2
             button.btn.btn.btn-primary(type='submit')

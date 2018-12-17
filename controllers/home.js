@@ -1,12 +1,15 @@
 const User = require('../models/User');
-const { roles, rolesByFraction } = require('../constants/roles');
+const { roles, RolesUtils } = require('../constants/roles');
 const rules = require('../constants/rules');
 const fractions = require('../constants/fractions');
 
-exports.index = (req, res) => {
+exports.index = async (req, res) => {
+  const users = await User.find();
+  const rolesUtils = new RolesUtils(users);
   res.render('intro', {
     title: 'Intro',
     roles,
+    rolesUtils,
   });
 };
 
@@ -23,10 +26,12 @@ exports.pravidla = (req, res) => {
   });
 };
 
-exports.registrace = (req, res) => {
+exports.registrace = async (req, res) => {
+  const users = await User.find();
+  const rolesUtils = new RolesUtils(users);
   res.render('registrace', {
     title: 'Registrace',
-    rolesByFraction,
+    rolesUtils,
     fractions,
   });
 };

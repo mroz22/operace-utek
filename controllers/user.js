@@ -4,7 +4,9 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
 
-const { roles } = require('../constants/roles');
+let { RolesUtils } = require('../constants/roles');
+const sex = require('../constants/sex');
+const nationalities = require('../constants/nationalities');
 
 const randomBytesAsync = promisify(crypto.randomBytes);
 
@@ -121,10 +123,13 @@ exports.postSignup = (req, res, next) => {
  * GET /account
  * Profile page.
  */
-exports.getAccount = (req, res) => {
+exports.getAccount = async (req, res) => {
+  const users = await User.find();
   res.render('account/profile', {
     title: 'Account Management',
-    roles,
+    rolesUtils: new RolesUtils(users),
+    sex,
+    nationalities,
   });
 };
 
@@ -155,7 +160,7 @@ exports.postUpdateProfile = (req, res, next) => {
         }
         return next(err);
       }
-      req.flash('success', { msg: 'Profile information has been updated.' });
+      req.flash('success', { msg: 'Hotovo' });
       res.redirect('/account');
     });
   });

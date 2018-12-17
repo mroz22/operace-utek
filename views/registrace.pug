@@ -3,17 +3,19 @@ extends layout
 block content
     .row
       .col-md-12
-        each fractionRoles, key in rolesByFraction
+        each fractionRoles, key in rolesUtils.getRolesByFraction()
           h3 #{key}
           p #{fractions[key].description}
           p Podmínky vítězství: #{fractions[key].victoryCondition}
           table.table-hover.table-bordered(style="table-layout: fixed")
             thead
+              th(width="10%") Registrovaných / Max
               th(width="20%") Role
-              th(width="60%") A její stručný popis
+              th(width="50%") A její stručný popis
               th(width="20%") Obtížnost
             each fractionRole in fractionRoles
               tr
+                td #{rolesUtils.getRegisteredCount(fractionRole.role)} / #{fractionRole.count}
                 td #{fractionRole.role}
                 td #{fractionRole.description}
                 td #{fractionRole.difficulty}
