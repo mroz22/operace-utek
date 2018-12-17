@@ -1,3 +1,3 @@
-const sex = ['Mužské', 'Ženské', 'Jiné'];
+const sex = ['Mužské', 'Ženské', 'Nezjištěno'];
 
 module.exports = sex;

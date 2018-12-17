@@ -1,3 +1,3 @@
-const nationalities = ['Chřibská', 'Valašská', 'Jiná'];
+const nationalities = ['Chřibská', 'Valašská', 'Nezjištěno'];
 
 module.exports = nationalities;

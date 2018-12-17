@@ -177,6 +177,8 @@ exports.postUpdateRole = (req, res, next) => {
     if (err) { return next(err); }
     user.role.role = req.body.role || '';
     user.role.name = req.body.name || '';
+    user.role.sex = req.body.sex || '';
+    user.role.nationality = req.body.nationality || '';
     user.save((err) => {
       if (err) {
         return next(err);
