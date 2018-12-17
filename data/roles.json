@@ -89,7 +89,7 @@
   },
   "priceModifier": 1,
   "difficulty": 7,
-  "fraction": "BO",
+  "fraction": "Odboj",
   "count": 5
 }, {
   "role": "Partyzán Chřibského hnutí odporu",
@@ -104,7 +104,7 @@
   },
   "priceModifier": 1,
   "difficulty": 7,
-  "fraction": "BO",
+  "fraction": "Odboj",
   "count": 4
 }, {
   "role": "Žoldák agentury Primus Protectus",
@@ -136,4 +136,20 @@
   "difficulty": 7,
   "fraction": "xx",
   "count": 0
+}, {
+  "role": "Civilista",
+  "description": "Jakýkoliv civilista. Příběh, jak se dostal na základnu si vymyslí sám. Bohužel se tam dostal v nešťastnou dobu, kdy probíhá vojenská operace, takže základnu nemůžu opustit a tak trochu tu překáží.",
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
+  "start": {
+    "place": "Kdekoliv",
+    "time": -2
+  },
+  "priceModifier": 0.5,
+  "difficulty": 1,
+  "fraction": "Civilisté",
+  "count": 10
 }]

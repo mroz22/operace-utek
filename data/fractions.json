@@ -1,14 +1,18 @@
 {
   "cholera": {
     "description": "Cholera nejaky pokec blabla",
-    "victoryCondition": "cholera vyhraje kdyz"
+    "victoryCondition": "Cholera vyhraje tehdy, zůstane-li současný režim u moci a zároveň udrží základnu Staré Hutě až do konce hry."
   },
-  "BO": {
-    "description": "Beskydský odboj vznikl v roce 2008 jako reakce na invazi Cholery na Valašsko během Operace Mutterland. Poté přešel do ilegality a pevně usídlen na horských salaších a košáriskách, podniká diverzní akce proti chřibskému režimu.",
-    "victoryCondition": "Obsazení základny Staré Hutě"
+  "Odboj": {
+    "description": "Odboj je rozstříštěná frakce tvořená několika různými, na sobě vesměs nezávislými skupinami. Mezi odboj se řadí také nemnoho vlků samotářů. Společným rysem odboje je nenávist k režimu a společným cílem snaha o jeho svržení. Za nejvýznamější skupiny se počítá organizace Beskydský odboj, která vznikla v roce 2008 jako reakce na invazi Cholery na Valašsko během Operace Mutterland. Poté přešel do ilegality a pevně usídlen na horských salaších a košáriskách, podniká diverzní akce proti chřibskému režimu.",
+    "victoryCondition": "Svržení současného režimu. Tento cíl bude na 100% dosažen v případě obsazení základny Staré Hutě."
   },
   "xx": {
     "description": "tohle fakt jeste nevim",
     "victoryCondition": "asi svrhnutí režimu a dosazení svých loutek??"
+  },
+  "Civilisté": {
+    "description": "Civilisté jsou neutrální frakce. Nacházejí se v ní osoby, které se z nějakého důvodu v době konání operace vyskytly na základně nebo jejím okolí. Může jít o dřevorubce, instalatéry, údržbáře, houbaře, nebo kohokoliv jiného. Tato frakce je vhodná pro návštěvy nebo obecně ty, kteří se necítí na to strávit noc v lese a dát si pořádně do těla, ale zároveň si nechtějí nechat ujít super víkend v přírode.",
+    "victoryCondition": "Přežít"
   }
 }
