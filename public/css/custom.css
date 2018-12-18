@@ -1,18 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=B612+Mono");
 .identification {
-  font-family: 'B612 Mono', monospace;
+  font-family: "B612 Mono", monospace;
   width: 400px;
   height: 600px;
   background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
-  padding: 20px 20px 20px 20px; }
-  .identification .heading1 {
-    text-transform: uppercase; }
-  .identification dd {
-    border: 1px dashed black;
-    padding: 5px; }
+  padding: 20px 20px 20px 20px;
+}
+.identification .heading1 {
+  text-transform: uppercase;
+}
+.identification dd {
+  border: 1px dashed black;
+  padding: 5px;
+}
 
 .flex {
-  display: flex; }
+  display: flex;
+}
 
 .center {
-  justify-content: center; }
+  justify-content: center;
+}
+
+/*# sourceMappingURL=custom.css.map */
