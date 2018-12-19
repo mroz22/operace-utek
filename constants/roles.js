@@ -27,15 +27,14 @@ class RolesUtils {
   }
 
   getRolesByFraction() {
-      const rolesByFraction = {};
-
-      roles.forEach((role) => {
-          if (!rolesByFraction[role.fraction]) {
-              rolesByFraction[role.fraction] = [];
-          }
-          rolesByFraction[role.fraction].push(role);
-      });
-      return rolesByFraction;
+    const rolesByFraction = {};
+    roles.forEach((role) => {
+      if (!rolesByFraction[role.fraction]) {
+        rolesByFraction[role.fraction] = [];
+      }
+      rolesByFraction[role.fraction].push(role);
+    });
+    return rolesByFraction;
   }
 }
 

@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
 
-let { RolesUtils } = require('../constants/roles');
+const { RolesUtils } = require('../constants/roles');
 const sex = require('../constants/sex');
 const nationalities = require('../constants/nationalities');
 
