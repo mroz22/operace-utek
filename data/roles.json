@@ -1,13 +1,29 @@
 [{
-  "role": "Voják základní služby ChLRA",
-  "description": "Voják základní služby je branec, který má nastoupit základní službu u pěšího útvaru na základně Staré hutě. K odvodu se má hlásit v odvodním a vystrojovacím středisku na základně v Uherském Hradišti, odkud vyrazí k plnění povinností vojáka základní služby na základně Staré Hutě",
+  "role": "Chřibský odvedenec",
+  "description": "Odvedeni ze všech koutů ChLDR, tedy například i z podrobeného Valašského Slovácka. Tráví na základně Staré Hutě svůj základní vojenský výcvik. Někteří odvedenci jsou velmi loayální režimu, jiní zase stříhrají metr",
   "pregameTask":"",
   "ingameTasks": [{
     "time": null,
     "description": ""
   }],
   "start": {
-    "place": "Skautská základna UH",
+    "place": "Vojenská základna staré Hutě",
+    "time": 0
+  },
+  "priceModifier": 1,
+  "difficulty": 5,
+  "fraction": "cholera",
+  "count": 10
+}, {
+  "role": "Příslušník strážního praporu Šohaj",
+  "description": "Členové řadové chřibské armády dislokovaní v Uherském Hradišti. Tato role je vhodná především pro ty, kteří v pátek nestíhají dojet včas. Strážní prapor Šohaj bude do akce nasazen až později.",
+  "pregameTask":"",
+  "ingameTasks": [{
+    "time": null,
+    "description": ""
+  }],
+  "start": {
+    "place": "Vojenská základna staré Hutě",
     "time": 0
   },
   "priceModifier": 1,
