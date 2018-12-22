@@ -93,10 +93,25 @@
   "fraction": "cholera",
   "count": 1
 }, {
-  "role": "Partyzán Beskydského odboje",
+  "role": "Partyzánský prapor Bečva",
   "pregameTask":"",
   "ingameTasks": [{
     "time": null,
+    "description": ""
+  }],
+  "start": {
+    "place": "Skautská základna v UH",
+    "time": -2
+  },
+  "priceModifier": 1,
+  "difficulty": 7,
+  "fraction": "Odboj",
+  "count": 5
+}, {
+  "role": "Partyzánský prapor Radhošť",
+  "pregameTask":"Výchozí místo vaší odbojářské skupiny je hrad Buchlov.",
+  "ingameTasks": [{
+    "time": 0,
     "description": ""
   }],
   "start": {
@@ -123,38 +138,8 @@
   "fraction": "Odboj",
   "count": 4
 }, {
-  "role": "Žoldák agentury Primus Protectus",
-  "pregameTask":"",
-  "ingameTasks": [{
-    "time": null,
-    "description": ""
-  }],
-  "start": {
-    "place": "Skautská základna v UH",
-    "time": -2
-  },
-  "priceModifier": 0,
-  "difficulty": 7,
-  "fraction": "xx",
-  "count": 5
-}, {
-  "role": "Georg Choroš",
-  "pregameTask":"",
-  "ingameTasks": [{
-    "time": null,
-    "description": ""
-  }],
-  "start": {
-    "place": "Skautská základna v UH",
-    "time": -2
-  },
-  "priceModifier": 0,
-  "difficulty": 7,
-  "fraction": "xx",
-  "count": 0
-}, {
   "role": "Civilista",
-  "description": "Jakýkoliv civilista. Příběh, jak se dostal na základnu si vymyslí sám. Bohužel se tam dostal v nešťastnou dobu, kdy probíhá vojenská operace, takže základnu nemůžu opustit a tak trochu tu překáží.",
+  "description": "Jakýkoliv civilista. Příběh, jak se dostal na základnu si vymyslí sám. Bohužel se tam dostal v nešťastnou dobu, kdy probíhá vojenská operace, takže základnu nemůže opustit a tak trochu tu překáží.",
   "pregameTask":"",
   "ingameTasks": [{
     "time": null,

@@ -1,11 +1,14 @@
 extends layout
 
 block content
-    .row
-      .col-md-12
-        each fractionRoles, key in rolesUtils.getRolesByFraction()
-          h2 #{key}
-          p #{fractions[key].description}
+    .row(style="text-align:justify")
+      each fractionRoles, key in rolesUtils.getRolesByFraction()
+        .col-md-6
+          h2(style="text-transform: uppercase") #{key}
+          - var img = `img/${fractions[key].descriptionImg}`
+          img(src=img width="100%")
+          each p in fractions[key].description
+            p #{p}
           p Podmínky vítězství: #{fractions[key].victoryCondition}
           each fractionRole in fractionRoles
             strong #{fractionRole.role} #{rolesUtils.getRegisteredCount(fractionRole.role)} / #{fractionRole.count}

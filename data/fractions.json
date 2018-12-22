@@ -1,18 +1,19 @@
 {
   "cholera": {
-    "description": "Cholera nejaky pokec blabla",
+    "description": ["Cholera je označení elitních jednotek ChLRA, tedy Chřibské lidově republikánské armády. Jako hlavní město Chřibské lidové republiky slouží vojenská základna Staré Hutě. Vůdcem ChLDR je Michail al Nasraláh a jeho pravá ruka mjr. Jašin. \n Cholera je organizovanou vojenskou jednotkou. Hra za tuto stranu tedy prověří schopnosti velení, předávání rozkazů a jejich plnění."],
+    "descriptionImg": "cholera.jpg",
     "victoryCondition": "Cholera vyhraje tehdy, zůstane-li současný režim u moci a zároveň udrží základnu Staré Hutě až do konce hry."
   },
   "Odboj": {
-    "description": "Odboj je rozstříštěná frakce tvořená několika různými, na sobě vesměs nezávislými skupinami. Mezi odboj se řadí také nemnoho vlků samotářů. Společným rysem odboje je nenávist k režimu a společným cílem snaha o jeho svržení. Za nejvýznamější skupiny se počítá organizace Beskydský odboj, která vznikla v roce 2008 jako reakce na invazi Cholery na Valašsko během Operace Mutterland. Poté přešel do ilegality a pevně usídlen na horských salaších a košáriskách, podniká diverzní akce proti chřibskému režimu.",
+    "description": [
+      "Odboj je rozstříštěná frakce tvořená několika různými, na sobě vesměs nezávislými skupinami. Mezi odboj se řadí také nemnoho vlků samotářů. Společným rysem odboje je nenávist k režimu a společným cílem snaha o jeho svržení. Za nejvýznamější skupiny se počítá organizace Beskydský odboj, která vznikla v roce 2008 jako reakce na invazi Cholery na Valašsko během Operace Mutterland. Poté přešel do ilegality a pevně usídlen na horských salaších a košáriskách, podniká diverzní akce proti chřibskému režimu.",
+    "Hra za odboj bude simulovat reálnou situci zejména v tom, že příslušníci této strany nebudou mít k dispozici informace o svých spolubojovních a jednotné velení. Výzvou bude tedy dostatečně zkoordinovat svůj postup i bez jednoznačně zvolené centrální autority."],
+    "descriptionImg": "odboj.jpeg",
     "victoryCondition": "Svržení současného režimu. Tento cíl bude na 100% dosažen v případě obsazení základny Staré Hutě."
   },
-  "xx": {
-    "description": "tohle fakt jeste nevim",
-    "victoryCondition": "asi svrhnutí režimu a dosazení svých loutek??"
-  },
   "Civilisté": {
-    "description": "Civilisté jsou neutrální frakce. Nacházejí se v ní osoby, které se z nějakého důvodu v době konání operace vyskytly na základně nebo jejím okolí. Může jít o dřevorubce, instalatéry, údržbáře, houbaře, nebo kohokoliv jiného. Tato frakce je vhodná pro návštěvy nebo obecně ty, kteří se necítí na to strávit noc v lese a dát si pořádně do těla, ale zároveň si nechtějí nechat ujít super víkend v přírode.",
+    "description": ["Civilisté jsou neutrální frakce. Nacházejí se v ní osoby, které se z nějakého důvodu v době konání operace vyskytly na základně nebo jejím okolí. Může jít o dřevorubce, instalatéry, údržbáře, houbaře, nebo kohokoliv jiného. Tato frakce je vhodná pro návštěvy nebo obecně ty, kteří se necítí na to strávit noc v lese a dát si pořádně do těla, ale zároveň si nechtějí nechat ujít super víkend v přírode."],
+    "descriptionImg": "civilista.jpg",
     "victoryCondition": "Přežít"
   }
 }

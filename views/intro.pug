@@ -3,9 +3,8 @@ extends layout
 block content
   if !authenticated
     h1 #{game.name}
-    p.lead Nevšední zážitková hra v přírodě
     hr
-    .row
+    .row(style="text-align: justify")
         .col-md-12
         h2 Intro
         each p in game.intro
